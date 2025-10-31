@@ -28,23 +28,33 @@
     <a href="admin/index2.html"><b>ورود به سایت</b></a>
   </div>
   <!-- /.login-logo -->
+   @section('content')
+
   <div class="login-box-body">
     <p class="login-box-msg">فرم زیر را تکمیل کنید و ورود بزنید</p>
+    @if($errors->any())
+      <div class="alert alert-danger" style="text-align:right;">
+            @foreach($errors->all() as $error)
+             <p>{{ $error }}</p>
+            @endforeach
+      </div>
+    @endif
+    <form action="{{ route('admin.login.submit') }}" method="post">
+              @csrf
 
-    <form action="admin/index2.html" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="ایمیل">
+        <input type="email" class="form-control" name="email" placeholder="ایمیل" value="{{ old('email') }}" required>
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="رمز عبور">
+        <input type="password" name="password" class="form-control" placeholder="رمز عبور" required>
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-12">
           <div class="checkbox icheck">
             <label>
-              <input type="checkbox"> مرا به خاطر بسپار
+              <input type="checkbox" name="remember"> مرا به خاطر بسپار
             </label>
           </div>
         </div>
