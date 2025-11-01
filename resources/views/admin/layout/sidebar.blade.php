@@ -40,7 +40,7 @@
         </li>
         <li class=" treeview {{ request()->routeIs('admin.orders.*') ? 'menu-open active' : '' }}">
           <a href="#">
-            <i class="fa fa-calendar"></i> <span>سفارشات</span>
+            <i class="fa fa-credit-card"></i> <span>سفارشات</span>
             <span class="pull-left-container">
               <i class="fa fa-angle-right pull-left"></i>
             </span>
@@ -48,6 +48,18 @@
           <ul class="treeview-menu">
             <li class=" {{ request()->routeIs('admin.orders.index') ? 'active' : '' }}"><a href="{{ route('admin.orders.index') }}"><i class="fa fa-list"></i>لیست سفارش ها</a></li>
             <li class = "{{ request()->routeIs('admin.categories.create') ? 'active' : '' }}"><a href="{{route('admin.categories.create')}}"><i class="fa fa-plus"></i>افزودن دسته بندی</a></li>
+          </ul>
+        </li>
+        <li class=" treeview {{ request()->routeIs('admin.products.*') ? 'menu-open active' : '' }}">
+          <a href="#">
+            <i class="fa fa-credit-card"></i> <span>محصولات</span>
+            <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class=" {{ request()->routeIs('admin.products.index') ? 'active' : '' }}"><a href="{{ route('admin.products.index') }}"><i class="fa fa-list"></i>لیست محصولات ها</a></li>
+            <li class = "{{ request()->routeIs('admin.products.create') ? 'active' : '' }}"><a href="{{route('admin.products.create')}}"><i class="fa fa-plus"></i>افزودن محصول</a></li>
           </ul>
         </li>
 

@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,6 +63,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
         Route::delete('orders/{id}', [OrderController::class, 'destroy'])->name('orders.delete');
+
+
+        //prouct
+        Route::get('/product', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/product/create', [ProductController::class, 'create'])->name('products.create');
+        Route::post('/product', [ProductController::class, 'store'])->name('products.store');
+        Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
+        Route::put('/product/{id}', [ProductController::class, 'update'])->name('products.update');
+        Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
         // مثال برای بخش پلن‌ها و سفارش‌ها:
         Route::get('/plans', [AdminController::class, 'plans'])->name('plans.index');
     });
