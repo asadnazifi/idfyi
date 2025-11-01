@@ -23,24 +23,34 @@
           </a>
           <ul class="treeview-menu">
             <li class=" {{ request()->routeIs('admin.users.index') ? 'active' : '' }}"><a href="{{ route('admin.users.index') }}"><i class="fa fa-list"></i>لیست کاربران</a></li>
-            <li class = "{{ request()->routeIs('admin.users.add') ? 'active' : '' }}"><a href="index2.html"><i class="fa fa-plus"></i>افزودن کاربر</a></li>
+            <li class = "{{ request()->routeIs('admin.users.create') ? 'active' : '' }}"><a href="{{route('admin.users.create')}}"><i class="fa fa-plus"></i>افزودن کاربر</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        <li class=" treeview {{ request()->routeIs('admin.categories.*') ? 'menu-open active' : '' }}">
           <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>لایه های صفحه</span>
+            <i class="fa fa-calendar"></i> <span>دسته بندی ها</span>
             <span class="pull-left-container">
-              <span class="label label-primary pull-left">4</span>
+              <i class="fa fa-angle-right pull-left"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> نوار بالا</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> باکس ها</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> فیکس شده</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> سایدبار</a></li>
+            <li class=" {{ request()->routeIs('admin.categories.index') ? 'active' : '' }}"><a href="{{ route('admin.categories.index') }}"><i class="fa fa-list"></i>لیست دسته بندی ها</a></li>
+            <li class = "{{ request()->routeIs('admin.categories.create') ? 'active' : '' }}"><a href="{{route('admin.categories.create')}}"><i class="fa fa-plus"></i>افزودن دسته بندی</a></li>
           </ul>
         </li>
+        <li class=" treeview {{ request()->routeIs('admin.orders.*') ? 'menu-open active' : '' }}">
+          <a href="#">
+            <i class="fa fa-calendar"></i> <span>سفارشات</span>
+            <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li class=" {{ request()->routeIs('admin.orders.index') ? 'active' : '' }}"><a href="{{ route('admin.orders.index') }}"><i class="fa fa-list"></i>لیست سفارش ها</a></li>
+            <li class = "{{ request()->routeIs('admin.categories.create') ? 'active' : '' }}"><a href="{{route('admin.categories.create')}}"><i class="fa fa-plus"></i>افزودن دسته بندی</a></li>
+          </ul>
+        </li>
+
         <li>
           <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>ویجت ها</span>

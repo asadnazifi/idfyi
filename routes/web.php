@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,11 +43,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // ثبت ویرایش
         Route::post('/users/{id}/update', [AdminController::class, 'updateUser'])->name('users.update');
+        Route::get('/users/create', [AdminController::class, 'createUser'])->name('users.create');
 
+        // ذخیره کاربر جدید
+        Route::post('/users/store', [AdminController::class, 'storeUser'])->name('users.store');
         // حذف کاربر
+        // دسته‌بندی‌ها
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
+        Route::post('/categories/store', [CategoryController::class, 'store'])->name('categories.store');
+        Route::get('/categories/{id}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
+        Route::post('/categories/{id}/update', [CategoryController::class, 'update'])->name('categories.update');
+        Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.delete');
         Route::delete('/users/{id}', [AdminController::class, 'deleteUser'])->name('users.delete');
+
+
+        //Order
+        Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+        Route::get('orders/{id}', [OrderController::class, 'show'])->name('orders.show');
+        Route::delete('orders/{id}', [OrderController::class, 'destroy'])->name('orders.delete');
         // مثال برای بخش پلن‌ها و سفارش‌ها:
         Route::get('/plans', [AdminController::class, 'plans'])->name('plans.index');
-        Route::get('/orders', [AdminController::class, 'orders'])->name('orders.index');
     });
 });

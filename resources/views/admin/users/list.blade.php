@@ -12,19 +12,7 @@
 
 @section('content')
     <div class="col-md-12">
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade in" style="direction: rtl; text-align: right">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <i class="fa fa-check-circle"></i> {{ session('success') }}
-            </div>
-        @endif
 
-        @if(session('error'))
-            <div class="alert alert-danger alert-dismissible fade in" style="direction: rtl; text-align: right">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <i class="fa fa-times-circle"></i> {{ session('error') }}
-            </div>
-        @endif
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">لیست کاربران</h3>
