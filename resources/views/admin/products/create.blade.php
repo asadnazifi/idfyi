@@ -41,12 +41,12 @@
         <label>توضیحات کامل</label>
             <div class="box-body pad">
               <form>
-                <textarea id="editor1" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"> این ویرایشگر راست چین و فارسی شده و تنظیمات آن به صورت اختصاصی تنظیم شده است...</textarea>
+                <textarea id="editor1" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </form>
             </div>
       </div>
       <div class="col-md-12">
-        <button class="btn btn-electric w-100 py-2">ثبت محصول</button>
+        <button class="btn btn-primary w-100 py-2">ثبت محصول</button>
       </div>
     </div>
   </form>

@@ -1,0 +1,165 @@
+a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+li{
+    list-style: none;
+}
+ul,li,p{
+    padding: 0px;
+    margin: 0;
+}
+.brand-color{
+    color: #4D6AFF;
+}
+.brand-color-darck{
+    color: #1B4B72;
+}
+.Rokh{
+    font-family: 'Rokh';
+}
+
+.Peyda-N{
+    font-family: 'Peyda';
+    font-weight: normal;
+}
+.Peyda-B{
+    font-family: 'Peyda-B';
+    font-weight: bold;
+}
+.BYekan{
+    font-family: 'BYekan';
+}
+.font-24{
+    font-size: 24px;
+}
+.content{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.active-menu{
+    border-bottom: solid #2ECC71;
+}
+.space-between{
+    justify-content: space-between;
+}
+.text-center{
+    text-align: center;
+}
+.text-justify{
+    text-align: justify;
+}
+.text-color{
+    color: #7D8A92;
+}
+.btn{
+    padding: 14px 18px;
+    border: none;
+    border-radius: 18px;
+    transition: all ease .5s;
+}
+.bg-bt{
+    background-color:#69B1E4 ;
+}
+.float-left{
+    float: left;
+}
+.color-white{
+    color: white;
+}
+.mt-20{
+    margin-top: 20px;
+}
+.mt-10{
+    margin-top: 10px;
+}
+.flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
+.mb-20{
+    margin-bottom: 20px;
+}
+.font-104{
+    font-size: 104px;
+}
+.w-100{
+    width: 100%;
+}
+.w-50{
+    width: 50%;
+}
+.mt-50{
+    margin-top: 50px;
+}
+.font-32{
+    font-size: 32px;
+}
+.green{
+    color: #2ECC71;
+}
+.origin{
+    color: #FF9F43;
+}
+.goold{
+    color: #F4D03F;
+}
+footer{
+    background-color: #00378A;
+    padding: 20px 10px;
+    margin-top: 30px;
+}
+.w-200{
+    width: 200px;
+}
+.item-footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item-footer>div{
+    width: 30%;
+
+}
+.margin-auto{
+    margin: 0 auto;
+}
+.btn:hover{
+    background-color: #00378A;
+}
+.radius-38{
+    border-radius: 38px;
+}
+.line-2{
+    line-height: 2;
+}
+.font-20{
+    font-size: 20px;
+}
+.text-content{
+    padding: 5px;
+}
+.flex{
+    display: flex;
+}
+.gap-10{
+    gap: 10px;
+}
+.mb-10{
+    margin-bottom: 10px;
+}
+.justfi-betwen{
+    justify-content: space-between;
+}
+.golde-color{
+    color: #F4D03F;
+}
+.justfi-center{
+    justify-content: center;
+}
+button{
+    cursor: pointer;
+}

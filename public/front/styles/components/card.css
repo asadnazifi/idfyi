@@ -1,0 +1,29 @@
+.title_subject{
+    display:flex ;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.cart-itme{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cart-itme>div{
+    box-shadow: 1px 9px 40px -7px #00000033;
+    width: 30%;
+    border-radius: 36px;
+    padding: 10px;
+}
+.cart-itme>div>div:nth-child(1){
+    width: 50%;
+    margin: 0 auto;
+
+}
+.cart-itme>div>div img{
+    border-radius: 15px;
+}
+.btn-cart>button{
+    width: 80%;
+    margin: 15px auto;
+}

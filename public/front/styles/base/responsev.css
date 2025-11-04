@@ -1,0 +1,156 @@
+/* موبایل متوسط (≥ 480px) */
+@media (max-width: 480px) {
+    header div ul li a span {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu div:nth-child(2) {
+        display: block;
+    }
+
+    .nav-menu div:first-child {
+        position: absolute;
+        left: 400px;
+        top: 54px;
+        background-color: #fff;
+        width: 350px;
+        box-shadow: 1px 9px 40px -7px #00000033;
+        z-index: 5;
+        transition: left 0.4s ease;
+        opacity: 0;
+        pointer-events: none;
+        height: 80vh;
+    }
+
+    /* حالت باز */
+    .nav-menu div:first-child.active {
+        left: 0px;
+        opacity: 1;
+        pointer-events: all;
+        right: 0;
+    }
+
+    /* حالت بستن */
+    .nav-menu div:first-child.closing {
+        left: 400px;
+        opacity: 0;
+    }
+
+    .nav-menu div:nth-child(1) ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-right: 10px;
+    }
+
+    .nav-menu div:nth-child(1) ul li:nth-child(2) {
+        margin: 10px auto;
+    }
+
+    .Introduction>:nth-child(2) {
+        display: none;
+    }
+
+    .Introduction>:nth-child(1) {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .Introduction>:nth-child(1) div h1 {
+        font-size: 30px;
+    }
+
+    .Introduction>div:nth-child(1)>p:first-of-type {
+        font-size: 22px;
+    }
+    .Introduction > div:nth-of-type(1) > p:nth-of-type(2){
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .card_introduction>div{
+        width: 46%;
+        height: 74px;
+
+    }
+    .font-104{
+        font-size: 50px;
+        padding-top: 10px;
+    }
+    .card_introduction .w-100 p:nth-of-type(1){
+        font-size: 20px;
+    }
+    .card_introduction .w-100 p:nth-of-type(2){
+        font-size: 15px;
+    }
+    .cart-itme>div{width: 90%;}
+    .item-footer>div{width: 90%;}
+    .navbar-dashbord{
+        width: 100%;
+        height: 14vh;
+    }
+    .navbar-dashbord>ul{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .navbar-dashbord>ul>a{
+        width: 30%;
+
+    }
+    .content-profile{
+        width: 100%;
+    }
+    .activ-nav-profil{
+        border-radius:50px ;
+    }
+    .content-right-panel>div {
+    width: 41%;
+    }
+.header-shop>div:nth-child(1){
+    width: 90%;
+}
+.header-shop>div:nth-child(2){
+    width: 90%;
+}
+.header-shop>div:nth-child(3){
+    width: 90%;
+}
+.price-buttom{
+    display: block;
+}
+
+}
+
+/* تبلت کوچک (≥ 768px) */
+@media (min-width: 768px) {
+    header div ul li a span {
+        display: block;
+    }
+
+    .nav-menu div:nth-child(2) {
+        display: none;
+    }
+
+    .nav-menu div:nth-child(1) {
+        display: block;
+    }
+
+    .nav-menu div:nth-child(1) ul li:nth-child(1) {
+        display: none;
+    }
+}
+
+/* لپ‌تاپ و دسکتاپ متوسط (≥ 1024px) */
+@media (min-width: 1024px) {
+    .nav-menu div:nth-child(2) {
+        display: none;
+    }
+
+}
+
+/* دسکتاپ بزرگ (≥ 1280px) */
+@media (min-width: 1280px) {}
+
+/* Ultra Wide (≥ 1600px) */
+@media (min-width: 1600px) {}

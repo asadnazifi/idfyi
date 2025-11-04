@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Front\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('admin.dashboard');
-// });
+
+Route::prefix('/')->name('front')->group(function () {
+    Route::get('', [HomeController::class, 'index'])->name('home');
+
+});
 Route::prefix('admin')->name('admin.')->group(function () {
 
     // صفحه ورود مدیر
@@ -72,6 +76,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('products.edit');
         Route::put('/product/{id}', [ProductController::class, 'update'])->name('products.update');
         Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+        Route::resource('articles', ArticleController::class);
+
         // مثال برای بخش پلن‌ها و سفارش‌ها:
         Route::get('/plans', [AdminController::class, 'plans'])->name('plans.index');
     });

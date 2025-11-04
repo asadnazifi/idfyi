@@ -1,0 +1,104 @@
+/* BYekan */
+@font-face {
+  font-family: "BYekan";
+  src: url("../../assets/fonts/BYekan.woff") format("woff"),
+       url("../../assets/fonts/BYekan.ttf") format("truetype"),
+       url("../../assets/fonts/BYekan.eot") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Peyda Black */
+/* Peyda Thin - وزن 100 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Peyda ExtraLight - وزن 200 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/peyda-extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Peyda Light - وزن 300 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/peyda-light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Peyda Regular - وزن 400 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Peyda Medium - وزن 500 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Peyda SemiBold - وزن 600 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Peyda Bold - وزن 700 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Peyda ExtraBold - وزن 800 */
+@font-face {
+  font-family: "Peyda";
+  src: url("../../assets/fonts/Peyda-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Peyda Black - وزن 900 */
+@font-face {
+  font-family: "Peyda-B";
+  src: url("../../assets/fonts/Peyda-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+/* Rokh Bold */
+@font-face {
+  font-family: "Rokh";
+  src: url("../../assets/fonts/Rokh-Bold.woff") format("woff"),
+       url("../../assets/fonts/Rokh-Bold.ttf") format("truetype"),
+       url("../../assets/fonts/Rokh-Bold.eot") format("embedded-opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Rokh Normal */
+@font-face {
+  font-family: "Rokh";
+  src: url("../../assets/fonts/Rokh-Normal.woff2") format("woff2"),
+       url("../../assets/fonts/Rokh-Normal.woff") format("woff"),
+       url("../../assets/fonts/Rokh-Normal.ttf") format("truetype"),
+       url("../../assets/fonts/Rokh-Normal.eot") format("embedded-opentype");
+  font-weight: 400;
+  font-style: normal;
+}

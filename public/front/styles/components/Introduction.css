@@ -1,0 +1,56 @@
+.Introduction {
+    display: flex;
+}
+
+.Introduction>:nth-child(1) {
+    width: 50%;
+}
+
+.Introduction>:nth-child(2) {
+    width: 50%;
+}
+
+.Introduction>:nth-child(1) div {
+    text-align: center;
+}
+
+.Introduction>:nth-child(1) {
+    text-align: center;
+}
+
+.Introduction>div:nth-child(1)>p:first-of-type {
+    font-size: 40px;
+}
+
+.Introduction>div:nth-of-type(1)>p:nth-of-type(2) {
+    font-size: 20px;
+    line-height: 2;
+}
+
+.Introduction>:nth-child(1) div h1 {
+    font-size: 64px;
+}
+
+.Introduction>:nth-child(2) img {
+    height: 600px;
+    margin: -81px;
+}
+
+.card_introduction {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card_introduction>div {
+    width: 23%;
+    box-shadow: 1px 9px 40px -7px #00000033;
+    border-radius: 18px;
+    display: flex;
+    padding: 3px;
+    height: 115px;
+    transition: all ease .5s;
+
+}
+.card_introduction>div:hover{
+    margin-top: -10px;
+}

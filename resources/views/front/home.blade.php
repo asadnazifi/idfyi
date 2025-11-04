@@ -1,0 +1,285 @@
+@extends('front.layout.main')
+@section('title', 'خانه')
+
+@section('content')
+    <div class="content">
+        <section class="section-introduction">
+            <div class="Introduction">
+                <div>
+                    <div class="Peyda-B">
+                        <h1>با تیم پشتیبانی <span class="brand-color-darck">آیدیفای</span></h1>
+                    </div>
+                    <p class="Peyda-B text-center">یک قرن در خدمت شماییم</p>
+                    <p class="Peyda-B text-justify text-color">
+                        ما در آیدیفای با افتخار به عنوان همراهی مطمئن برای مدیران وب‌سایت‌ها فعالیت می‌کنیم. از
+                        رفع مشکلات ناگهانی تا بهینه‌سازی عملکرد سایت، تیم پشتیبانی ما به صورت ۲۴ ساعته و ۷ روز
+                        هفته آماده پاسخگویی و ارائه راهکارهای فوری است.<br> با تجربه گسترده در مدیریت وردپرس،
+                        رفع خطاها، بهبود سرعت، امنیت سایت و حل مشکلات فنی، ما تضمین می‌کنیم هیچ وب‌سایتی بدون
+                        پشتیبان نماند.
+                    </p>
+                    <div class="mt-20">
+                        <button class="btn float-left  Peyda-B bg-bt mb-20"><a class="color-white" href="#">درخواست
+                                پشتیبانی</a></button>
+                    </div>
+
+                </div>
+                <div class="text-center">
+                    <img src="{{ asset('front/assets/images/nazifi.png') }}" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="card_introduction flex mt-20">
+            <div>
+                <div class="font-104"><iconify-icon class="brand-color-darck " icon="mdi:infinity"></iconify-icon></div>
+                <div class="w-100">
+                    <p class="Peyda-N text-center font-32 mt-10">همیشگی</p>
+                    <p class="Peyda-N text-center text-color font-20 mt-10">همیشه اینجایم</p>
+                </div>
+            </div>
+            <div>
+                <div class="font-104"><iconify-icon class="green " icon="material-symbols:lock"></iconify-icon></div>
+                <div class="w-100">
+                    <p class="Peyda-N text-center font-32 mt-10">مطمئن</p>
+                    <p class="Peyda-N text-center text-color font-20 mt-10">پشتیانی مطمئن</p>
+                </div>
+            </div>
+            <div>
+                <div class="font-104"><iconify-icon class="origin " icon="ic:outline-loop"></iconify-icon></div>
+                <div class="w-100">
+                    <p class="Peyda-N text-center font-32 mt-10">بی وقفه</p>
+                    <p class="Peyda-N text-center text-color font-20 mt-10">راحل همیشه </p>
+                </div>
+            </div>
+            <div>
+                <div class="font-104"><iconify-icon class="goold " icon="mynaui:lightning"></iconify-icon></div>
+                <div class="w-100">
+                    <p class="Peyda-N text-center font-32 mt-10">آماده</p>
+                    <p class="Peyda-N text-center text-color font-20 mt-10">سریع و آماده</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="title_subject">
+            <div>
+                <p class="Peyda-B brand-color-darck font-32">پلن ها</p>
+            </div>
+            <div>
+                <button class="btn Peyda-B bg-bt mb-20"><a class="color-white" href="#">مشاهده همه
+                    </a></button>
+            </div>
+        </div>
+        <div class="cart-itme">
+            <div>
+                <div><img src="assets/images/2.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن پایه</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">برای سایت‌های کوچک و تازه‌کار
+                        مانیتورینگ کلی سایت، رفع باگ‌های ساده، به‌روزرسانی افزونه‌ها و بکاپ ماهانه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/3.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن استاندارد</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
+                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن حرفه ای</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
+                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن حرفه ای</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
+                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن حرفه ای</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
+                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32">پلن حرفه ای</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
+                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                            href="#">درخواست
+                        </a></button></div>
+            </div>
+
+        </div>
+        <div class="title_subject">
+            <div>
+                <p class="Peyda-B brand-color-darck font-32">تیم ما</p>
+            </div>
+            <div>
+                <button class="btn Peyda-B bg-bt mb-20"><a class="color-white" href="#">مشاهده همه
+                    </a></button>
+            </div>
+        </div>
+        <div class="cart-itme">
+            <div>
+                <div><img src="{{ asset('front/assets/images/asad.png') }}" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center mt-20">اسعد نظیفی </p>
+                </div>
+                <div>
+                    <p class="Peyda-B text-color text-center mt-20 mb-10">مدیر و موسس سایت</p>
+                </div>
+            </div>
+            <div>
+                <div><img src="{{ asset('front/assets/images/afshin.png') }}" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center mt-20"> افشین مرادی </p>
+                </div>
+                <div>
+                    <p class="Peyda-B text-color text-center mt-20 mb-10">مدیر عامل UX سایت</p>
+                </div>
+
+            </div>
+            <div>
+                <div><img src="{{ asset('front/assets/images/mahsa.png') }}" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center mt-20"> ممهسا نوری  </p>
+                </div>
+                <div>
+                    <p class="Peyda-B text-color text-center mt-20 mb-10">مدیر و توسعه دهنده فرانت سایت</p>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="title_subject">
+            <div>
+                <p class="Peyda-B brand-color-darck font-32">آخرین اخبار </p>
+            </div>
+            <div>
+                <button class="btn Peyda-B bg-bt mb-20"><a class="color-white" href="#">مشاهده همه
+                    </a></button>
+            </div>
+        </div>
+        <div class="cart-itme">
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+            <div>
+                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+                <div>
+                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                </div>
+                <div>
+                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
+                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
+                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
+                </div>
+                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                        </a></button></div>
+            </div>
+
+
+        </div>
+    </div>
+@endsection
