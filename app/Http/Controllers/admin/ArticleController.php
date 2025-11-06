@@ -34,6 +34,7 @@ class ArticleController extends Controller
             'title' => 'required|string|max:255',
             'category_id' => 'nullable|exists:categories,id',
             'content' => 'nullable|string',
+            'short_content' => 'string',
             'thumbnail' => 'nullable|image|max:2048',
             'is_published' => 'boolean'
         ]);

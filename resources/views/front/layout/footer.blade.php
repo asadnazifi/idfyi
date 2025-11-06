@@ -27,5 +27,5 @@
         </div>
     </footer>
 
-    <script src="https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js"></script>
+    <script src="{{ asset('front/scripts/core/iconify-icon.min.js') }}"></script>
     <script src="{{ asset('front/scripts/main.js') }}"></script>

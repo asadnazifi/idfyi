@@ -12,7 +12,7 @@ class Article extends Model
 
     protected $fillable = [
         'user_id', 'category_id', 'title', 'slug',
-        'content', 'thumbnail', 'is_published', 'published_at'
+        'content', 'thumbnail', 'is_published', 'published_at','short_content'
     ];
 
     public function author()
@@ -32,6 +32,11 @@ class Article extends Model
         static::creating(function ($article) {
             $article->slug = Str::slug($article->title);
         });
+    }
+    public function getThumbnailAttribute($value){
+       return $value
+           ? asset('storage/' . $value)
+           : asset('images/images.png');
     }
 }
 

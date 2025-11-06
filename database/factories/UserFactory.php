@@ -21,8 +21,8 @@ class UserFactory extends Factory
         $roles = ['user', 'developer'];
 
         return [
-            'lastname'       => $this->faker->name(),
-            'farstname'       => $this->faker->name(),
+            'lastname'       => $this->faker->lastName(),
+            'farstname'       => $this->faker->firstName(),
             'email'      => $this->faker->unique()->safeEmail(),
             'phone'      => $this->faker->numerify('0912#######'),
             'password'   => Hash::make('password'),

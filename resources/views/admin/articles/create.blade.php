@@ -32,24 +32,26 @@
         <label>تصویر اصلی</label>
         <input type="file" name="thumbnail" class="form-control">
       </div>
+        <div class="col-md-6 mb-3">
+        <label>توضیحات کوتاه</label>
+        <textarea id="editor2" name="short_content"></textarea>
+      </div>
       <div class="col-md-12 mb-3">
         <label>محتوا</label>
         <textarea id="editor" name="content"></textarea>
       </div>
       <div class="col-md-12">
-        <button class="btn btn-electric w-100 py-2">ثبت مقاله</button>
+        <button class="btn btn-primary w-100 py-2">ثبت مقاله</button>
       </div>
     </div>
   </form>
 </div>
 
 @push('scripts')
-<script src="{{ asset('admin/js/ckeditor/ckeditor.js') }}"></script>
+<script src="{{ asset('admin/bower_components/ckeditor/ckeditor.js') }}"></script>
 <script>
-ClassicEditor.create(document.querySelector('#editor'), {
-    language: 'fa',
-    direction: 'rtl',
-}).catch(error => console.error(error));
+CKEDITOR.replace('editor')
+CKEDITOR.replace('editor2')
 </script>
 @endpush
 @endsection

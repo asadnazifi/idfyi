@@ -181,7 +181,7 @@
             <div>
                 <div><img src="{{ asset('front/assets/images/mahsa.png') }}" alt="" class="w-100"></div>
                 <div>
-                    <p class="Peyda-B font-32 text-center mt-20"> ممهسا نوری  </p>
+                    <p class="Peyda-B font-32 text-center mt-20"> ممهسا نوری </p>
                 </div>
                 <div>
                     <p class="Peyda-B text-color text-center mt-20 mb-10">مدیر و توسعه دهنده فرانت سایت</p>
@@ -200,85 +200,19 @@
             </div>
         </div>
         <div class="cart-itme">
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
+            @foreach ($ArticlesLists as $artilec)
                 <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
+                    <div><img src="{{ $artilec->thumbnail }}" alt="{{ $artilec->title }}" class="w-100"></div>
+                    <div>
+                        <p class="Peyda-B font-32 text-center"> {{ Str::limit($artilec->title,25) }}</p>
+                    </div>
+                    <div>
+                        <p class="Peyda-N text-color text-justify"> {!! Str::limit($artilec->short_content, 300) !!}</p>
+                    </div>
+                    <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
+                            </a></button></div>
                 </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/1.jfif" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32 text-center"> PHP چیست</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color text-justify">پی اچ پی زبان متن بازی است که برنامه نویسان سمت سرور از
-                        اسکریپت آن برای توسعه وب استفاده می‌کنند. علاوه بر این php را می‌توان برای ایجاد پروژه‌های مختلف
-                        از جمله بخش گرافیکی سمت کاربر سایت به کار برد.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white" href="#">مشاهده
-                        </a></button></div>
-            </div>
-
+            @endforeach
 
         </div>
     </div>

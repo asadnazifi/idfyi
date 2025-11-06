@@ -64,7 +64,7 @@ class User extends Authenticatable
         return Jalalian::forge($this->created_at)->format('H:i- Y/m/d');
     }
     public function orders()
-{
-    return $this->hasMany(Order::class);
-}
+    {
+        return $this->hasMany(Order::class);
+    }
 }
