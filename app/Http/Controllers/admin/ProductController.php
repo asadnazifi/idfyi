@@ -41,6 +41,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'sale_price' => 'nullable|numeric|min:0',
             'description' => 'nullable|string',
+            'short_content' => 'string',
             'category_id' => 'nullable|exists:categories,id'
         ]);
 
@@ -65,6 +66,7 @@ class ProductController extends Controller
             'price' => 'required|numeric|min:0',
             'sale_price' => 'nullable|numeric|min:0',
             'description' => 'nullable|string',
+            'short_content' => 'string',
             'category_id' => 'nullable|exists:categories,id'
         ]);
 

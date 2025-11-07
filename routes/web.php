@@ -3,9 +3,11 @@
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\MediaController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('/')->name('front')->group(function () {
+Route::prefix('/')->name('front.')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('home');
-
+    Route::get('/login',[ProfileController::class,'login'])->name('login');
 });
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -78,6 +80,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
 
         Route::resource('articles', ArticleController::class);
+        Route::resource('media', MediaController::class);
 
         // مثال برای بخش پلن‌ها و سفارش‌ها:
         Route::get('/plans', [AdminController::class, 'plans'])->name('plans.index');

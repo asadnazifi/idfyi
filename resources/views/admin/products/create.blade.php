@@ -38,10 +38,18 @@
         <input type="number" name="sale_price" class="form-control">
       </div>
       <div class="col-md-12 mb-3">
+        <label>توضیحات کوتاه</label>
+            <div class="box-body pad">
+              <form>
+                <textarea name="short_content" id="editor2" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </form>
+            </div>
+      </div>
+      <div class="col-md-12 mb-3">
         <label>توضیحات کامل</label>
             <div class="box-body pad">
               <form>
-                <textarea id="editor1" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                <textarea name="description" id="editor1" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </form>
             </div>
       </div>
@@ -59,6 +67,7 @@
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
     CKEDITOR.replace('editor1')
+    CKEDITOR.replace('editor2')
     //bootstrap WYSIHTML5 - text editor
   })
 </script>

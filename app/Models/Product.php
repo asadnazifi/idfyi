@@ -21,7 +21,8 @@ class Product extends Model
         'sale_price',
         'stock',
         'thumbnail',
-        'is_active'
+        'is_active',
+        'short_content'
     ];
 
     public function category()

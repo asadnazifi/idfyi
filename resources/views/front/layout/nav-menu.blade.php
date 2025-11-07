@@ -28,8 +28,19 @@
             <ul>
                 <li><a href="#"> <span class="number-cart">1</span><iconify-icon class="brand-color font-24"
                             icon="mdi:cart"></iconify-icon> </a></li>
-                <li><a href="#"> <iconify-icon class="brand-color font-24" icon="arcticons:my-spectrum"></iconify-icon>
-                        <span> </span> </a></li>
+                @auth
+                    <li><a href="#"> <iconify-icon class="brand-color font-24"
+                                icon="arcticons:my-spectrum"></iconify-icon>
+                            <span> </span> </a></li>
+                @else
+                    <li>
+                    <a href="{{ route('front.login') }}" class="btn Peyda-B bg-bt ">
+                        ورود / ثبت نام
+                    </a>
+                    </li>
+
+                @endauth
+
             </ul>
         </div>
     </div>
