@@ -29,7 +29,7 @@
                 <li><a href="#"> <span class="number-cart">1</span><iconify-icon class="brand-color font-24"
                             icon="mdi:cart"></iconify-icon> </a></li>
                 @auth
-                    <li><a href="#"> <iconify-icon class="brand-color font-24"
+                    <li><a href="{{route('front.dashbord')}}"> <iconify-icon class="brand-color font-24"
                                 icon="arcticons:my-spectrum"></iconify-icon>
                             <span> </span> </a></li>
                 @else

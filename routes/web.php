@@ -24,7 +24,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->name('front.')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('home');
-    Route::get('/login',[ProfileController::class,'login'])->name('login');
+    Route::get('/login', [ProfileController::class, 'login'])->name('login');  // نمایش فرم
+    Route::get('/register', [ProfileController::class, 'register'])->name('register');  // نمایش فرم
+    Route::post('/register', [ProfileController::class, 'RegisterSubmit'])->name('rigester.submit');  // نمایش فرم
+
+    Route::post('/login', [ProfileController::class, 'loginSubmit'])->name('login.submit'); // عملیات لاگین
+
+    Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
+    Route::middleware(['front.only'])->group(function () {
+    Route::get('/dashbord',[ProfileController::class,'dashbord'])->name('dashbord');
+    });
 });
 Route::prefix('admin')->name('admin.')->group(function () {
 

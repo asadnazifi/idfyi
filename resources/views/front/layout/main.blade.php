@@ -10,11 +10,14 @@
     <link rel="stylesheet" href="{{ asset('front/styles/components/Introduction.css') }}">
     <link rel="stylesheet" href="{{ asset('front/styles/base/_fonts.css') }}">
     <link rel="stylesheet" href="{{ asset('front/styles/base/responsev.css') }}">
+    @stack('style')
         <title>@yield('title', 'خانه')</title>
 
 </head>
 
 <body>
+    @include('front.partials.toast')
+
     @include('front.layout.header')
     @include('front.layout.nav-menu')
 
