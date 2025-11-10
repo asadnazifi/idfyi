@@ -31,7 +31,7 @@
                 @auth
                     <li><a href="{{route('front.dashbord')}}"> <iconify-icon class="brand-color font-24"
                                 icon="arcticons:my-spectrum"></iconify-icon>
-                            <span> </span> </a></li>
+                            <span>  {{ Auth::user()->lastname }} {{ Auth::user()->farstname }}  </span> </a></li>
                 @else
                     <li>
                     <a href="{{ route('front.login') }}" class="btn Peyda-B bg-bt ">

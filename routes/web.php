@@ -29,10 +29,15 @@ Route::prefix('/')->name('front.')->group(function () {
     Route::post('/register', [ProfileController::class, 'RegisterSubmit'])->name('rigester.submit');  // نمایش فرم
 
     Route::post('/login', [ProfileController::class, 'loginSubmit'])->name('login.submit'); // عملیات لاگین
+    Route::get('/orders', [ProfileController::class, 'order'])->name('orders'); // عملیات لاگین
 
-    Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
+    Route::get('/logout', [ProfileController::class, 'logout'])->name('logout');
     Route::middleware(['front.only'])->group(function () {
     Route::get('/dashbord',[ProfileController::class,'dashbord'])->name('dashbord');
+    Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
+    Route::post('/profile',[ProfileController::class,'ProfileSubmit'])->name('profile.update');
+
+
     });
 });
 Route::prefix('admin')->name('admin.')->group(function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
 use Auth;
 use Hash;
@@ -84,8 +85,54 @@ class ProfileController extends Controller
 
         return redirect()->route('front.home');
     }
-    public function dashbord(){
+    public function dashbord()
+    {
         return view('front.profile.dashbord');
     }
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('front.profile.profile', compact('user'));
+    }
+    public function ProfileSubmit(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'lastname' => 'required|string|max:255',
+            'farstname' => 'required|string|max:255',
+            'password' => 'nullable|string|min:6|confirmed',
+        ]);
+
+        // 🔸 ویرایش فقط نام‌ها
+        $user->lastname = $request->lastname;
+        $user->farstname = $request->farstname;
+
+        // 🔸 بررسی تغییر رمز عبور
+        if ($request->filled('password')) {
+            // if (!$request->filled('current_password')) {
+            //     return back()->with('error', 'برای تغییر رمز عبور، ابتدا رمز فعلی را وارد کنید.');
+            // }
+
+            // // بررسی درستی رمز فعلی
+            // if (!Hash::check($request->current_password, $user->password)) {
+            //     return back()->with('error', 'رمز فعلی درست نیست.');
+            // }
+
+            // رمز جدید هش‌شده و جایگزین می‌شود
+            $user->password = Hash::make($request->password);
+        }
+
+        $user->save();
+
+        return back()->with('success', 'اطلاعات با موفقیت به‌روزرسانی شد.');
+
+    }
+    public function order(){
+        $orders =  Order::paginate(25);
+        return view('front.profile.order',compact('orders'));
+    }
+
+
 
 }
