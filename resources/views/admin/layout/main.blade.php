@@ -19,6 +19,7 @@
        folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/skins/_all-skins.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin-custom.css') }}"> {{-- استایل دلخواهت برای فینیش لوکس --}}
+    @stack('style')
 </head>
 
 <body class="hold-transition skin-yellow sidebar-mini">

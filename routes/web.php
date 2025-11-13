@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\MediaController;
+use App\Http\Controllers\admin\NotificationController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Front\HomeController;
@@ -33,10 +34,11 @@ Route::prefix('/')->name('front.')->group(function () {
 
     Route::get('/logout', [ProfileController::class, 'logout'])->name('logout');
     Route::middleware(['front.only'])->group(function () {
-    Route::get('/dashbord',[ProfileController::class,'dashbord'])->name('dashbord');
-    Route::get('/profile',[ProfileController::class,'profile'])->name('profile');
-    Route::post('/profile',[ProfileController::class,'ProfileSubmit'])->name('profile.update');
-
+        Route::get('/dashbord', [ProfileController::class, 'dashbord'])->name('dashbord');
+        Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+        Route::post('/profile', [ProfileController::class, 'ProfileSubmit'])->name('profile.update');
+        Route::get('notifications', [ProfileController::class, 'notifications'])->name('notifications');
+        Route::post('notifications/toggle', [ProfileController::class, 'toggle'])->name('notifications.toggle');
 
     });
 });
@@ -65,6 +67,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // ثبت ویرایش
         Route::post('/users/{id}/update', [AdminController::class, 'updateUser'])->name('users.update');
         Route::get('/users/create', [AdminController::class, 'createUser'])->name('users.create');
+        Route::get('/users/search', [AdminController::class, 'search'])->name('users.search');
 
         // ذخیره کاربر جدید
         Route::post('/users/store', [AdminController::class, 'storeUser'])->name('users.store');
@@ -96,6 +99,14 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('articles', ArticleController::class);
         Route::resource('media', MediaController::class);
 
+
+        //notifitions
+        Route::get('/notifications', [NotificationController::class, 'index'])->name('notifition.index');
+        Route::get('/notifications/create', [NotificationController::class, 'create'])->name('notifications.create');
+        Route::post('/notifications', [NotificationController::class, 'store'])->name('notifications.store');
+        Route::get('/notifications/{id}/edit', [NotificationController::class, 'edit'])->name('notifications.edit');
+        Route::put('/notifications/{id}', [NotificationController::class, 'update'])->name('notifications.update');
+        Route::delete('/notifications/{id}', [NotificationController::class, 'destroy'])->name('notifications.delete');
         // مثال برای بخش پلن‌ها و سفارش‌ها:
         Route::get('/plans', [AdminController::class, 'plans'])->name('plans.index');
     });

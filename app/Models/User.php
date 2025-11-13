@@ -67,4 +67,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+    public function notifications()
+    {
+        return $this->belongsToMany(Notification::class, 'notification_users')
+            ->withPivot('is_read', 'read_at')
+            ->withTimestamps();
+    }
 }

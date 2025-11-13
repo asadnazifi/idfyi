@@ -99,7 +99,7 @@
 
     .navbar-dashbord {
         width: 100%;
-        height: 14vh;
+        height: 21vh;
     }
 
     .navbar-dashbord>ul {
@@ -162,6 +162,7 @@
         justify-content: space-between;
         padding: 10px 16px;
         border-bottom: 1px solid #eef3ff;
+        direction: ltr;
     }
 
     .orders-table td::before {

@@ -26,5 +26,6 @@
     @include('front.layout.footer')
 
 </body>
-
+<script src="{{ asset('front/scripts/core/jquery.min.js') }}"></script>
+@stack('scripts')
 </html>

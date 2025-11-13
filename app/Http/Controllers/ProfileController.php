@@ -128,9 +128,77 @@ class ProfileController extends Controller
         return back()->with('success', 'اطلاعات با موفقیت به‌روزرسانی شد.');
 
     }
-    public function order(){
-        $orders =  Order::paginate(25);
-        return view('front.profile.order',compact('orders'));
+    public function order(Request $request)
+    {
+        $query = Order::where('user_id', Auth::id());
+
+        // فیلتر جستجو (شماره سفارش یا آدرس یا یادداشت)
+        if ($request->filled('search')) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('order_number', 'LIKE', "%{$search}%")
+                    ->orWhere('notes', 'LIKE', "%{$search}%")
+                    ->orWhere('shipping_address', 'LIKE', "%{$search}%");
+            });
+        }
+
+        // فیلتر وضعیت
+        if ($request->filled('status') && $request->status != 'default') {
+            $query->where('status', $request->status);
+        }
+
+        // صفحه‌بندی: هر صفحه ۱۰ تا
+        $orders = $query->latest()->paginate(3);
+
+        return view('front.profile.order', compact('orders'));
+    }
+    public function notifications(Request $request)
+    {
+        $query = auth()->user()->notifications()
+            ->withPivot('is_read', 'read_at')
+            ->orderByDesc('notifications.created_at');
+
+        // فیلتر جستجو
+        if ($search = $request->search) {
+            $query->where('title', 'like', "%{$search}%")
+                ->orWhere('message', 'like', "%{$search}%");
+        }
+
+        // فیلتر وضعیت خوانده/نخوانده
+        $status = $request->status;
+        if ($status === 'read') {
+            $query->wherePivot('is_read', true);
+        } elseif ($status === 'unread') {
+            $query->wherePivot('is_read', false);
+        }
+
+        $notifications = $query->paginate(20); // هر صفحه ۲۰ اعلان
+
+        return view('front.profile.notifications', compact('notifications'));
+    }
+    public function toggle(Request $request)
+    {
+        $user = auth()->user();
+
+        // گروهی
+        if ($request->has('ids')) {
+            foreach ($request->ids as $id) {
+                $user->notifications()->updateExistingPivot($id, [
+                    'is_read' => $request->action === 'read',
+                    'read_at' => $request->action === 'read' ? now() : null,
+                ]);
+            }
+            return back()->with('success', 'وضعیت اعلان‌ها بروزرسانی شد.');
+        }
+
+        // ajax برای تک دکمه
+        if ($request->ajax() && $request->has('id')) {
+            $user->notifications()->updateExistingPivot($request->id, [
+                'is_read' => $request->status === 'read',
+                'read_at' => $request->status === 'read' ? now() : null,
+            ]);
+            return response()->json(['success' => true]);
+        }
     }
 
 

@@ -14,8 +14,8 @@
                 <span>سفارشات</span>
             </li>
         </a>
-        <a href="#" class="BYekan ">
-            <li class="flex gap-10"><iconify-icon class="font-24" icon="ion:notifcations"></iconify-icon>
+        <a href="{{ route('front.notifications') }}" class="BYekan ">
+            <li class="flex gap-10 {{ request()->routeIs('front.notifications')?'activ-nav-profil':'' }}"><iconify-icon class="font-24" icon="ion:notifcations"></iconify-icon>
                 <span>اعلان ها</span>
             </li>
         </a>

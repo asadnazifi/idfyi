@@ -88,6 +88,21 @@
                             href="{{route('admin.products.create')}}"><i class="fa fa-plus"></i>افزودن محصول</a></li>
                 </ul>
             </li>
+            <li class=" treeview {{ request()->routeIs('admin.notifiction.*') ? 'menu-open active' : '' }}">
+                <a href="#">
+                    <i class="fa  fa-file"></i> <span>اعلان ها</span>
+                    <span class="pull-left-container">
+                        <i class="fa fa-angle-right pull-left"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=" {{ request()->routeIs('admin.notifition.index') ? 'active' : '' }}"><a
+                            href="{{ route('admin.notifition.index') }}"><i class="fa fa-list"></i>لیست اعلا ها</a>
+                    </li>
+                    <li class="{{ request()->routeIs('admin.notifications.create') ? 'active' : '' }}"><a
+                            href="{{route('admin.notifications.create')}}"><i class="fa fa-plus"></i>افزودن اعلان</a></li>
+                </ul>
+            </li>
 
             <li>
                 <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

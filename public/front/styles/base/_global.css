@@ -164,3 +164,35 @@ button{
     cursor: pointer;
 }
 
+.aidify-pagination {
+    text-align: center;
+    margin-top: 24px;
+}
+.aidify-pagination .page-link {
+    display: inline-block;
+    margin: 0 4px;
+    padding: 8px 14px;
+    border: none;
+    background-color: #053262;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+.aidify-pagination .page-link:hover {
+    background-color: #4D6AFF;
+    color: #fff;
+}
+.aidify-pagination .page-link.active {
+    background-color: #0d6efd;
+    color: #fff;
+    cursor: default;
+}
+.aidify-pagination .page-link.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+.link{
+    color: #0068d6;
+    text-decoration: underline;
+}

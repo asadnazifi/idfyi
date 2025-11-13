@@ -137,7 +137,16 @@ class AdminController extends Controller
         return redirect()->route('admin.users.index')
             ->with('success', 'کاربر با موفقیت حذف شد.');
     }
+    public function search(Request $request)
+    {
+        $query = $request->get('q', '');
+        $users = User::where('farstname', 'like', "%$query%")
+            ->orWhere('lastname', 'like', "%$query%")
+            ->take(10)
+            ->get(['id', 'farstname', 'lastname']);
 
+        return response()->json($users);
+    }
 
 
 }

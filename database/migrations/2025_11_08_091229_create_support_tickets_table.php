@@ -13,12 +13,22 @@ return new class extends Migration {
         Schema::create('support_tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+
             $table->string('title'); // موضوع تیکت
-            $table->string('type')->default('general'); // 'general' یا 'paid'
-            $table->foreignId('related_plan_id')->nullable()->constrained('support_plans')->onDelete('set null'); // فقط برای پلن‌های خریداری‌شده
+            $table->string('type')->default('general'); // نوع تیکت: 'general' یا 'paid'
+
+            // 👇 اضافه‌کردن ستون قبل از تعریف foreign key
+            $table->unsignedBigInteger('related_plan_id')->nullable(); // فقط برای پلن‌های خریداری‌شده
+
             $table->enum('status', ['open', 'in_progress', 'answered', 'closed'])->default('open');
             $table->timestamp('last_reply_at')->nullable(); // آخرین زمان پاسخ برای مرتب‌سازی
             $table->timestamps();
+
+            // 👇 تعریف کلید خارجی بعد از ساخت ستون و جدول مقصد موجود
+            $table->foreign('related_plan_id')
+                ->references('id')
+                ->on('support_plans')
+                ->nullOnDelete(); // در صورت حذف پلن، null بشه
         });
     }
 
