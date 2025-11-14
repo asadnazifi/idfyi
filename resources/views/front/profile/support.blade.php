@@ -12,49 +12,58 @@
                 <div class="table-header">
                     <h2>لیست سفارشات</h2>
 
-                    <form action="{{ route('front.orders') }}" method="GET" class="search-bar">
-                        <input type="text" name="search" value="{{ request('search') }}" class="BYekan"
-                            placeholder="جستجو...">
+                    <form action="{{ route('front.support') }}" method="GET" class="search-bar BYekan">
+                        <input type="text" name="search" value="{{ request('search') }}"
+                            placeholder="جستجو بر اساس عنوان یا شماره تیکت...">
+
                         <select name="status" class="BYekan">
-                            <option value="default">پیش‌فرض</option>
-                            <option value="new" {{ request('status') == 'new' ? 'selected' : '' }}>سفارش جدید</option>
-                            <option value="pending" {{ request('status') == 'pending' ? 'selected' : '' }}>در انتظار</option>
-                            <option value="completed" {{ request('status') == 'completed' ? 'selected' : '' }}>تکمیل شد
+                            <option value="default">تمام وضعیت‌ها</option>
+                            <option value="open" {{ request('status') == 'open' ? 'selected' : '' }}>فعال</option>
+                            <option value="in_progress" {{ request('status') == 'in_progress' ? 'selected' : '' }}>در حال
+                                بررسی</option>
+                            <option value="answered" {{ request('status') == 'answered' ? 'selected' : '' }}>پاسخ داده شده
                             </option>
-                            <option value="canceled" {{ request('status') == 'canceled' ? 'selected' : '' }}>لغو شد</option>
+                            <option value="closed" {{ request('status') == 'closed' ? 'selected' : '' }}>بسته شده</option>
                         </select>
-                        <button type="submit" class="btn BYekan bg-bt">اعمال</button>
+
+                        <button type="submit" class="btn BYekan bg-bt">اعمال فیلتر</button>
                     </form>
                 </div>
 
                 <table class="orders-table">
                     <thead>
                         <tr>
-                            <th>شماره سفارش</th>
-                            <th>مبلغ</th>
-                            <th>تاریخ خرید</th>
+                            <th>شماره پشتیبانی</th>
+                            <th>موضوع</th>
+                            <th>پلن </th>
                             <th>وضعیت</th>
+                            <th>اخرین ساعت پاسخ گوی</th>
                             <th>عملیات</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($orders as $order)
+                        @forelse($supports as $support)
                             <tr>
-                                <td data-label="شماره سفارش">#{{ $order->order_number }}</td>
-                                <td data-label="مبلغ">{{ number_format($order->total_price) }} تومان</td>
-                                <td data-label="تاریخ خرید">{{ jdate($order->created_at)->format('d F Y') }}</td>
+                                <td data-label="شماره سفارش">#{{ $support->id }}</td>
+                                <td data-label="مبلغ">{{ $support->title }} </td>
+                                <td data-label="پلن">{{ $support->plan->plan_name }} </td>
                                 <td data-label="وضعیت">
                                     @php
                                         $statuses = [
-                                            'pending' => ['class' => 'status-pending', 'text' => 'در انتظار'],
-                                            'completed' => ['class' => 'status-completed', 'text' => 'تکمیل شد'],
-                                            'canceled' => ['class' => 'status-canceled', 'text' => 'لغو شد'],
-                                            'processing' => ['class' => 'status-new', 'text' => 'سفارش جدید'],
+                                            'open' => ['class' => 'status-pending', 'text' => 'فعال'],
+                                            'in_progress' => ['class' => 'status-completed', 'text' => '  در حال برسی'],
+                                            'closed' => ['class' => 'status-canceled', 'text' => 'بسته شده'],
+                                            'answered' => ['class' => 'status-new', 'text' => 'پاسخ داده شده '],
                                         ];
-                                        $status = $statuses[$order->status] ?? ['class' => 'status-pending', 'text' => 'نامشخص'];
+                                        $status = $statuses[$support->status] ?? [
+                                            'class' => 'status-pending',
+                                            'text' => 'نامشخص',
+                                        ];
                                     @endphp
                                     <span class="status {{ $status['class'] }}">{{ $status['text'] }}</span>
                                 </td>
+                                <td data-label="تاریخ خرید">{{ jdate($support->update_at)->format('d F Y - H:i') }}</td>
+
                                 <td data-label="مشاهده">
                                     <a href="">
                                         <iconify-icon class="font-24" icon="mdi:show"></iconify-icon>
@@ -63,14 +72,14 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">سفارشی یافت نشد.</td>
+                                <td colspan="5" class="text-center">تیکتی یافت نشد.</td>
                             </tr>
                         @endforelse
                     </tbody>
                 </table>
 
                 <div class="pagination">
-                    {{ $orders->links('vendor.pagination.aidify') }}
+                    {{ $supports->links('vendor.pagination.aidify') }}
                 </div>
             </div>
 

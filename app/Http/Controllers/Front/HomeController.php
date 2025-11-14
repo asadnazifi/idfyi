@@ -14,4 +14,8 @@ class HomeController extends Controller
 
         return View('front.home',compact('ArticlesLists'));
     }
+    public function contact()  
+    {
+        return view('front.contact');    
+    }
 }

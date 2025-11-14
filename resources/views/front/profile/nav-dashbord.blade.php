@@ -19,8 +19,8 @@
                 <span>اعلان ها</span>
             </li>
         </a>
-        <a href="#" class="BYekan ">
-            <li class="flex gap-10"><iconify-icon class="font-24" icon="fluent:person-support-32-filled"></iconify-icon>
+        <a href="{{route('front.support')}}" class="BYekan ">
+            <li class="flex gap-10 {{ request()->routeIs('front.support')?'activ-nav-profil':'' }}"><iconify-icon class="font-24" icon="fluent:person-support-32-filled"></iconify-icon>
                 <span>پشتیبانی</span> </li>
         </a>
         <a href="{{ route('front.logout') }}" class="BYekan ">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\SupportTicket;
 use App\Models\User;
 use Auth;
 use Hash;
@@ -44,7 +45,6 @@ class ProfileController extends Controller
         }
 
         return back()->with('error', 'اطلاعات ورود صحیح نیست.');
-
     }
     public function register()
     {
@@ -126,7 +126,6 @@ class ProfileController extends Controller
         $user->save();
 
         return back()->with('success', 'اطلاعات با موفقیت به‌روزرسانی شد.');
-
     }
     public function order(Request $request)
     {
@@ -200,7 +199,22 @@ class ProfileController extends Controller
             return response()->json(['success' => true]);
         }
     }
+    public function support(Request $request)
+    {
+        $supports = SupportTicket::query()
+            ->with('plan')
+            ->when($request->search, function ($query, $search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('title', 'LIKE', "%{$search}%")
+                        ->orWhere('id', $search);
+                });
+            })
+            ->when($request->status && $request->status !== 'default', function ($query, $status) {
+                $query->whereRaw('REPLACE(LOWER(status), " ", "_") = ?', [strtolower($status)]);
+            })
+            ->latest()
+            ->paginate(20);
 
-
-
+        return view('front.profile.support', compact('supports'));
+    }
 }

@@ -6,14 +6,14 @@
                 </li>
                 <li><a href="home.html"> <img width="26" src="assets/images/logo.png" alt=""> <span
                             class="brand-color">ایدیفای</span></a> </li>
-                <li class="active-menu"><a href=""> <iconify-icon class="brand-color font-24"
+                <li class="{{request()->routeIs('front.home')?'active-menu':''}}"><a href="{{route('front.home')}}"> <iconify-icon class="brand-color font-24"
                             icon="material-symbols:home-rounded"></iconify-icon> <span>خانه</span> </a></li>
                 <li><a href="#"> <iconify-icon class="brand-color font-24" icon="gridicons:plans"></iconify-icon>
                         <span>پلن های پشتیبانی</span> </a></li>
                 <li><a href="#"> <iconify-icon class="brand-color font-24"
                             icon="material-symbols:for-you"></iconify-icon> <span> درباره ما </span> </a>
                 </li>
-                <li><a href="#"> <iconify-icon class="brand-color font-24"
+                <li class="{{request()->routeIs('front.contact')?'active-menu':''}}"><a href="{{route('front.contact')}}"> <iconify-icon class="brand-color font-24"
                             icon="icon-park-solid:phone-two"></iconify-icon> <span> تماس با ما </span> </a>
                 </li>
             </ul>

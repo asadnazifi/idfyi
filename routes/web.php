@@ -39,6 +39,8 @@ Route::prefix('/')->name('front.')->group(function () {
         Route::post('/profile', [ProfileController::class, 'ProfileSubmit'])->name('profile.update');
         Route::get('notifications', [ProfileController::class, 'notifications'])->name('notifications');
         Route::post('notifications/toggle', [ProfileController::class, 'toggle'])->name('notifications.toggle');
+        Route::get('/support',[ProfileController::class,'support'])->name('support');
+        Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
     });
 });
