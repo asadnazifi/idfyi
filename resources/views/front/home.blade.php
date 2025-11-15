@@ -69,84 +69,27 @@
             </div>
         </div>
         <div class="cart-itme">
-            <div>
-                <div><img src="assets/images/2.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن پایه</p>
+            @foreach ($plans as $plan)
+                <div><a href="{{ route('front.product', $plan->slug) }}">
+                        <div><img src="storage/{{ asset($plan->photo) }}" alt="{{ $plan->title }}" class="w-100"></div>
+                        <div>
+                            <p class="Peyda-B font-32">{{ $plan->title }}</p>
+                        </div>
+                        <div class="Peyda-N text-color text-justify">
+                            {!! $plan->short_content !!}
+                        </div>
+                        <div class="Peyda-B brand-color font-24 text-justify mt-20 float-left">
+                            {{ $plan->price }} تومان
+                        </div>
+                    </a>
+
+                    <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
+                                href="#">درخواست
+                            </a></button></div>
                 </div>
-                <div>
-                    <p class="Peyda-N text-color">برای سایت‌های کوچک و تازه‌کار
-                        مانیتورینگ کلی سایت، رفع باگ‌های ساده، به‌روزرسانی افزونه‌ها و بکاپ ماهانه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/3.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن استاندارد</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
-                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن حرفه ای</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
-                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن حرفه ای</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
-                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن حرفه ای</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
-                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
-            <div>
-                <div><img src="assets/images/4.png" alt="" class="w-100"></div>
-                <div>
-                    <p class="Peyda-B font-32">پلن حرفه ای</p>
-                </div>
-                <div>
-                    <p class="Peyda-N text-color">تعادل کامل بین هزینه و پشتیبانی
-                        پشتیبانی هفتگی، رفع مشکلات مهم، بهبود سرعت و امنیت پایه.</p>
-                </div>
-                <div class="text-center btn-cart"> <button class="btn Peyda-B bg-bt "><a class="color-white"
-                            href="#">درخواست
-                        </a></button></div>
-            </div>
+            @endforeach
+
+
 
         </div>
         <div class="title_subject">
@@ -204,7 +147,7 @@
                 <div>
                     <div><img src="{{ $artilec->thumbnail }}" alt="{{ $artilec->title }}" class="w-100"></div>
                     <div>
-                        <p class="Peyda-B font-32 text-center"> {{ Str::limit($artilec->title,25) }}</p>
+                        <p class="Peyda-B font-32 text-center"> {{ Str::limit($artilec->title, 25) }}</p>
                     </div>
                     <div>
                         <p class="Peyda-N text-color text-justify"> {!! Str::limit($artilec->short_content, 300) !!}</p>

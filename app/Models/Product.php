@@ -22,7 +22,8 @@ class Product extends Model
         'stock',
         'thumbnail',
         'is_active',
-        'short_content'
+        'short_content',
+        'photo'
     ];
 
     public function category()

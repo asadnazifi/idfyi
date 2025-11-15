@@ -31,6 +31,7 @@ Route::prefix('/')->name('front.')->group(function () {
 
     Route::post('/login', [ProfileController::class, 'loginSubmit'])->name('login.submit'); // عملیات لاگین
     Route::get('/orders', [ProfileController::class, 'order'])->name('orders'); // عملیات لاگین
+    Route::get('/product/{slug}', [HomeController::class, 'show'])->name('product');
 
     Route::get('/logout', [ProfileController::class, 'logout'])->name('logout');
     Route::middleware(['front.only'])->group(function () {

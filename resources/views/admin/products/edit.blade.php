@@ -39,7 +39,10 @@
         <label>قیمت تخفیف</label>
         <input type="number" name="sale_price" class="form-control" value="{{ old('sale_price', $product->sale_price) }}">
       </div>
-
+      <div class="col-md-6 mb-6">
+        <label>تصویر محصول</label>
+        <input type="file" name="photo" class="form-control" value="{{ old('photo', $product->photo) }}">
+      </div>
       <div class="col-md-12 mb-3">
         <label>توضیحات کوتاه</label>
         <textarea name="short_content" id="editor2" style="width: 100%; height: 200px;">{{ old('short_content', $product->short_content) }}</textarea>

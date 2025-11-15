@@ -5,7 +5,7 @@
 <div class="aidify-container">
   <h4 class="text-light mb-4">ایجاد محصول جدید</h4>
 
-  <form method="POST" action="{{ route('admin.products.store') }}">
+  <form method="POST" action="{{ route('admin.products.store') }}" enctype="multipart/form-data">
     @csrf
     <div class="row">
       <div class="col-md-6 mb-3">
@@ -36,6 +36,10 @@
       <div class="col-md-3 mb-3">
         <label>قیمت تخفیف</label>
         <input type="number" name="sale_price" class="form-control">
+      </div>
+      <div class="col-md-6 mb-6">
+        <label>تصویر محصول</label>
+        <input type="file" name="photo" class="form-control">
       </div>
       <div class="col-md-12 mb-3">
         <label>توضیحات کوتاه</label>

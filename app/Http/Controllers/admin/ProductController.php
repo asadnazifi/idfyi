@@ -42,9 +42,12 @@ class ProductController extends Controller
             'sale_price' => 'nullable|numeric|min:0',
             'description' => 'nullable|string',
             'short_content' => 'string',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'photo' => 'nullable|file'
         ]);
-
+        if ($request->hasFile('photo')) {
+            $data['photo'] = $request->file('photo')->store('media', 'public');
+        }
         $product = Product::create($data);
         return redirect()->route('admin.products.index')->with('success', 'محصول با موفقیت ثبت شد.');
     }
@@ -60,17 +63,28 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
 
-        $data = $request->validate([
-            'title' => 'required|string',
-            'type' => 'required|in:physical,course,service',
-            'price' => 'required|numeric|min:0',
-            'sale_price' => 'nullable|numeric|min:0',
-            'description' => 'nullable|string',
-            'short_content' => 'string',
-            'category_id' => 'nullable|exists:categories,id'
-        ]);
+    $data = $request->validate([
+        'title'         => 'required|string',
+        'type'          => 'required|in:physical,course,service',
+        'price'         => 'required|numeric|min:0',
+        'sale_price'    => 'nullable|numeric|min:0',
+        'description'   => 'nullable|string',
+        'short_content' => 'nullable|string',
+        'category_id'   => 'nullable|exists:categories,id',
+        'photo'         => 'nullable|file|image|max:2048',
+    ]);
 
-        $product->update($data);
+    // اگر عکس جدید بارگذاری نشده، همون عکس قبلی بمونه
+    if ($request->hasFile('photo')) {
+        // اگر عکس جدید فرستاده شده بود، عکس جدید ذخیره کن
+        $data['photo'] = $request->file('photo')->store('media', 'public');
+    } else {
+        // اگر عکس جدیدی نیومده، مقدارش رو از محصول فعلی بردار
+        $data['photo'] = $product->photo;
+    }
+
+    $product->update($data);
+
         return redirect()->route('admin.products.index')->with('success', 'محصول با موفقیت ویرایش شد.');
     }
 
